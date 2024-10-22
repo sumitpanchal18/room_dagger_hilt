@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Apex Dagger</string>
+    <string name="create_entry">Create New Entry</string>
+    <string name="delete_all">Delete all data</string>
+    <string name="timestamp_will_appear_here">Timestamp will appear here</string>
+    <string name="get_all_data">Get all data</string>
+    <string name="update_entry">Update data by Id</string>
+    <string name="delete_data_by_id">Delete data by Id</string>
+    <string name="generate_json_file">Generate Json File</string>
+    <string name="room_database">Room Database</string>
+</resources>
