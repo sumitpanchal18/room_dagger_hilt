@@ -51,6 +51,7 @@ dependencies {
 
     // Dagger Hilt
     implementation("com.google.dagger:hilt-android:2.50")
+    implementation("androidx.activity:activity:1.9.3")
     kapt("com.google.dagger:hilt-android-compiler:2.50")
 
     // Room Database

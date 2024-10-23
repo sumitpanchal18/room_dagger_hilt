@@ -17,6 +17,9 @@
         android:theme="@style/Theme.DragerHill"
         tools:targetApi="31">
         <activity
+            android:name=".dbPrivateKey.PrivateKeyActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.main.DependencyInjection"
             android:exported="false" />
         <activity
@@ -26,10 +29,11 @@
             android:name=".ui.activity.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".dbPrivateKey.PrivateKeyActivity"
+            android:name=".commentJsonHolderApi.CommentApiActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
