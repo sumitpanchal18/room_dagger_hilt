@@ -1,15 +1,16 @@
 package mvvm.app.dragerhill.dbMetadata
 
 import androidx.lifecycle.LiveData
+import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class MetadataRepo @Inject constructor(private val metadataDao: MetadataDao) {
 
-    fun getAllMetadata(): LiveData<List<MetaData>> {
+    fun getAllMetadata(): Flow<List<MetaData>> {
         return metadataDao.getMetadata()
     }
 
-    fun getEvenMetadata() : LiveData<List<MetaData>>{
+    fun getEvenMetadata() : Flow<List<MetaData>>{
         return metadataDao.getEvenMetadata()
     }
     suspend fun createMetadata(metadata: MetaData) {

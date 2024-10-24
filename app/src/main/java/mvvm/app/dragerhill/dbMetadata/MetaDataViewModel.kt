@@ -8,6 +8,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import mvvm.app.dragerhill.R
 import java.io.File
@@ -24,7 +25,7 @@ class MetaDataViewModel @Inject constructor(
     private val fileName = "watchmantest.json"
     private val folderName = "ConfigSetting"
 
-    val allMetadataLiveDataClass: LiveData<List<MetaData>> = metadataRepo.getAllMetadata()
+    val allMetadataLiveDataClass: Flow<List<MetaData>> = metadataRepo.getAllMetadata()
 
 
     @SuppressLint("SimpleDateFormat")

@@ -23,13 +23,13 @@
             android:name=".ui.activity.main.DependencyInjection"
             android:exported="false" />
         <activity
-            android:name=".dbMetadata.RoomDbActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.activity.main.MainActivity"
             android:exported="false" />
         <activity
             android:name=".commentJsonHolderApi.CommentApiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".dbMetadata.RoomDbActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
