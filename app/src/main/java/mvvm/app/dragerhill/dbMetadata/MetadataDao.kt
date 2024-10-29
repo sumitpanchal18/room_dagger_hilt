@@ -6,14 +6,15 @@ import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
 
 @Dao
 interface MetadataDao {
     @Query("SELECT * FROM metadata_table")
-    fun getMetadata(): LiveData<List<MetaData>>
+    fun getMetadata(): Flow<List<MetaData>>
 
     @Query("SELECT * FROM metadata_table WHERE id % 2 = 0")
-    fun getEvenMetadata(): LiveData<List<MetaData>>
+    fun getEvenMetadata(): Flow<List<MetaData>>
 
     @Delete
     suspend fun delete(metadata: MetaData)

@@ -7,5 +7,5 @@ import retrofit2.http.Query
 interface CommentApi {
 
     @GET("comments")
-    fun getComments(@Query("id") id: Int): Call<List<CommentDataClassItem>>
+    fun getComments(@Query("email") email: String): Call<List<CommentDataClassItem>>
 }

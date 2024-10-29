@@ -23,10 +23,10 @@
             android:name=".ui.activity.main.DependencyInjection"
             android:exported="false" />
         <activity
-            android:name=".dbMetadata.RoomDbActivity"
+            android:name=".ui.activity.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.main.MainActivity"
+            android:name=".dbMetadata.RoomDbActivity"
             android:exported="false" />
         <activity
             android:name=".commentJsonHolderApi.CommentApiActivity"

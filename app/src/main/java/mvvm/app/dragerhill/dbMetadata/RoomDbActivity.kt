@@ -5,7 +5,9 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
 import dagger.hilt.android.AndroidEntryPoint
+import kotlinx.coroutines.launch
 import mvvm.app.dragerhill.R
 import mvvm.app.dragerhill.databinding.ActivityRoomDbBinding
 
@@ -20,9 +22,15 @@ class RoomDbActivity : AppCompatActivity() {
         binding = ActivityRoomDbBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        metaDataViewModel.allMetadataLiveDataClass.observe(this) { metadataList ->
-            loadImage(metadataList)
+        lifecycleScope.launch {
+            metaDataViewModel.allMetadataLiveDataClass.collect { sumit ->
+                loadImage(sumit)
+            }
         }
+
+        /*metaDataViewModel.allMetadataLiveDataClass.observe(this) { metadataList ->
+            loadImage(metadataList)
+        }*/
 
         binding.btnClick.setOnClickListener {
             metaDataViewModel.metadataSave()
