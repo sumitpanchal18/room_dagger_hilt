@@ -26,10 +26,10 @@
             android:name=".ui.activity.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".commentJsonHolderApi.CommentApiActivity"
+            android:name=".dbMetadata.RoomDbActivity"
             android:exported="false" />
         <activity
-            android:name=".dbMetadata.RoomDbActivity"
+            android:name=".commentJsonHolderApi.CommentApiActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

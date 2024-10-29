@@ -25,8 +25,9 @@ class CommentApiActivity : AppCompatActivity() {
         binding = ActivityCommentApiBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val id = 18
-        val apiCall = commentApi.getComments(id)
+        val id = 1
+        val email = "Jayne_Kuhic@sydney.com"
+        val apiCall = commentApi.getComments(email)
 
         apiCall.enqueue(object : Callback<List<CommentDataClassItem>?> {
             override fun onResponse(
@@ -40,8 +41,8 @@ class CommentApiActivity : AppCompatActivity() {
                 binding.txtApiRes.text = res.toString()
 
                 res?.forEach {
-//                    Log.d(TAG, "Email : ${it.email}")
-//                    Log.d(TAG, "Name : ${it.name}")
+                    Log.d(TAG, "Email : ${it.email}")
+                    Log.d(TAG, "Name : ${it.name}")
                 }
             }
 
