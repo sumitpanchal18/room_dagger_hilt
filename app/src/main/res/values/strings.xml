@@ -8,4 +8,8 @@
     <string name="delete_data_by_id">Delete data by Id</string>
     <string name="generate_json_file">Generate Json File</string>
     <string name="room_database">Room Database</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="generated_slug_will_appear_here">Generated Slug will appear here</string>
+    <string name="loading">Loading...</string>
 </resources>

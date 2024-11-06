@@ -81,4 +81,7 @@ dependencies {
     // Dagger Hilt Testing Dependencies
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.50")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
+
+        implementation ("com.facebook.shimmer:shimmer:0.5.0")
+
 }

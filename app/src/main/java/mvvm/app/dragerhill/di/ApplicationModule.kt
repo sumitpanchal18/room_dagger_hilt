@@ -24,7 +24,6 @@ import java.util.concurrent.TimeUnit
 @InstallIn(SingletonComponent::class)
 class ApplicationModule {
 
-    //    Comment retrofit api integration
     private val baseUrl = "https://jsonplaceholder.typicode.com/"
 
     @Singleton
@@ -38,21 +37,9 @@ class ApplicationModule {
                 chain.proceed(request)
             }
             .connectTimeout(30, TimeUnit.SECONDS)
-//        Sets the maximum time to establish a connection to a server.
             .readTimeout(30, TimeUnit.SECONDS)
-//        Sets the maximum time to wait for a server response after establishing a connection
             .build()
     }
-
-    /**
-     *  Interceptors can intercept and modify requests and responses, providing a
-     *  way to add functionality like logging, authentication, or error handling.
-     *
-     *  chain: Represents the current request/response chain.
-     *
-     *  Adds an Authorization header to the request. This is commonly used for API authentication,
-     *  where your_token is a placeholder for the actual token you want to send.
-     */
 
     @Singleton
     @Provides
@@ -69,8 +56,6 @@ class ApplicationModule {
     fun provideCommentApi(retrofit: Retrofit): CommentApi {
         return retrofit.create(CommentApi::class.java)
     }
-
-    // metadata room database
 
     @Singleton
     @Provides
@@ -90,8 +75,6 @@ class ApplicationModule {
     fun provideMetadataRepo(metadataDao: MetadataDao): MetadataRepo =
         MetadataRepo(metadataDao)
 
-    // private key room database
-
     @Singleton
     @Provides
     fun providePrivateKeyAppDatabase(
@@ -101,7 +84,6 @@ class ApplicationModule {
         PrivateKeyAppDatabase::class.java,
         "pvDB"
     ).build()
-
 
     @Provides
     fun providePrivateKeyDao(privateKeyAppDatabase: PrivateKeyAppDatabase): PrivateKeyDao =
