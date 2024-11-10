@@ -1,4 +1,4 @@
-package mvvm.app.dragerhill.dbMetadata
+package mvvm.app.dragerhill.dbMetadata.view
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
@@ -10,6 +10,8 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
 import mvvm.app.dragerhill.R
 import mvvm.app.dragerhill.databinding.ActivityRoomDbBinding
+import mvvm.app.dragerhill.dbMetadata.model.MetaData
+import mvvm.app.dragerhill.dbMetadata.viewModel.MetaDataViewModel
 
 @AndroidEntryPoint
 class RoomDbActivity : AppCompatActivity() {
@@ -37,7 +39,7 @@ class RoomDbActivity : AppCompatActivity() {
         }
 
         binding.btnDelete.setOnClickListener {
-            metaDataViewModel.deleteInvalid()
+            metaDataViewModel.deleteAllMetadata()
         }
     }
 

@@ -1,10 +1,8 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
-    //dependency
     id("kotlin-kapt")
     id("dagger.hilt.android.plugin")
-
 }
 
 android {
@@ -19,6 +17,17 @@ android {
         versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+
+        // Add Room schema export location
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments += mapOf(
+                    "room.schemaLocation" to "$projectDir/schemas",
+                    "room.incremental" to "true",
+                    "room.expandProjection" to "true"
+                )
+            }
+        }
     }
 
     buildTypes {
@@ -42,6 +51,7 @@ android {
         dataBinding = true
     }
 }
+
 dependencies {
     implementation("androidx.core:core-ktx:1.12.0")
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -82,6 +92,5 @@ dependencies {
     androidTestImplementation("com.google.dagger:hilt-android-testing:2.50")
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
 
-        implementation ("com.facebook.shimmer:shimmer:0.5.0")
-
+    implementation("com.facebook.shimmer:shimmer:0.5.0")
 }

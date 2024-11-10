@@ -1,4 +1,4 @@
-package mvvm.app.dragerhill.dbMetadata
+package mvvm.app.dragerhill.dbMetadata.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

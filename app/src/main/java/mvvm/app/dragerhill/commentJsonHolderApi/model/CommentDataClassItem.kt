@@ -1,4 +1,4 @@
-package mvvm.app.dragerhill.commentJsonHolderApi
+package mvvm.app.dragerhill.commentJsonHolderApi.model
 
 data class CommentDataClassItem(
     val body: String,
@@ -7,3 +7,5 @@ data class CommentDataClassItem(
     val name: String,
     val postId: Int
 )
+
+class CommentDataClass : ArrayList<CommentDataClassItem>()

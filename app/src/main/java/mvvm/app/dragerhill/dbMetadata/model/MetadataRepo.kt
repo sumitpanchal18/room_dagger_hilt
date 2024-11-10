@@ -1,6 +1,5 @@
-package mvvm.app.dragerhill.dbMetadata
+package mvvm.app.dragerhill.dbMetadata.model
 
-import androidx.lifecycle.LiveData
 import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 

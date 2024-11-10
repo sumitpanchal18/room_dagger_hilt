@@ -17,7 +17,7 @@
         android:theme="@style/Theme.DragerHill"
         tools:targetApi="31">
         <activity
-            android:name=".commentJsonHolderApi.CommentApiActivity"
+            android:name=".commentJsonHolderApi.view.CommentApiActivity"
             android:exported="false" />
         <activity
             android:name=".dbPrivateKey.PrivateKeyActivity"
@@ -29,10 +29,10 @@
             android:name=".ui.activity.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".dbMetadata.RoomDbActivity"
+            android:name=".ui.activity.main.PracticeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.activity.main.PracticeActivity"
+            android:name=".dbMetadata.view.RoomDbActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

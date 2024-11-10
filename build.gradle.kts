@@ -5,9 +5,12 @@ buildscript {
     repositories {
         google()
         mavenCentral()
+        gradlePluginPortal()
     }
     dependencies {
-        classpath ("com.google.dagger:hilt-android-gradle-plugin:2.50")
+        classpath("com.android.tools.build:gradle:7.4.2")
+        classpath("com.google.dagger:hilt-android-gradle-plugin:2.50")
+        classpath("androidx.room:room-compiler:2.6.1")
     }
 }
 plugins {

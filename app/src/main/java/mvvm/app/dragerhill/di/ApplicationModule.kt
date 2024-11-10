@@ -8,13 +8,14 @@ import javax.inject.Singleton
 import dagger.hilt.InstallIn
 import dagger.hilt.android.qualifiers.ApplicationContext
 import dagger.hilt.components.SingletonComponent
-import mvvm.app.dragerhill.commentJsonHolderApi.CommentApi
-import mvvm.app.dragerhill.dbMetadata.MetadataAppDatabase
-import mvvm.app.dragerhill.dbMetadata.MetadataDao
-import mvvm.app.dragerhill.dbMetadata.MetadataRepo
+import mvvm.app.dragerhill.commentJsonHolderApi.model.CommentApi
+import mvvm.app.dragerhill.dbMetadata.model.MetadataAppDatabase
+import mvvm.app.dragerhill.dbMetadata.model.MetadataDao
+import mvvm.app.dragerhill.dbMetadata.model.MetadataRepo
 import mvvm.app.dragerhill.dbPrivateKey.PrivateKeyAppDatabase
 import mvvm.app.dragerhill.dbPrivateKey.PrivateKeyDao
 import mvvm.app.dragerhill.dbPrivateKey.PrivateKeyRepo
+import mvvm.app.dragerhill.utils.Constant
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -23,8 +24,6 @@ import java.util.concurrent.TimeUnit
 @Module
 @InstallIn(SingletonComponent::class)
 class ApplicationModule {
-
-    private val baseUrl = "https://jsonplaceholder.typicode.com/"
 
     @Singleton
     @Provides
@@ -45,7 +44,7 @@ class ApplicationModule {
     @Provides
     fun provideRetrofit(okHttp: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(baseUrl)
+            .baseUrl(Constant.BaseUrl)
             .client(okHttp)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
