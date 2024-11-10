@@ -9,8 +9,3 @@ abstract class PrivateKeyAppDatabase : RoomDatabase() {
     abstract fun privateKeyDao(): PrivateKeyDao
 
 }
-
-/**
- * Exporting the schema helps you track changes to the database schema across different versions of the app
- * By exporting the schema, you can store historical snapshots of the database schema
- */

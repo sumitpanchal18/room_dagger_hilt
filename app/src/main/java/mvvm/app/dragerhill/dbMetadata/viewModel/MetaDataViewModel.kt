@@ -1,16 +1,16 @@
-package mvvm.app.dragerhill.dbMetadata
+package mvvm.app.dragerhill.dbMetadata.viewModel
 
 import android.annotation.SuppressLint
-import android.app.Application
 import android.os.Environment
 import android.util.Log
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.launch
 import mvvm.app.dragerhill.R
+import mvvm.app.dragerhill.dbMetadata.model.MetaData
+import mvvm.app.dragerhill.dbMetadata.model.MetadataRepo
 import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
@@ -18,7 +18,6 @@ import javax.inject.Inject
 
 @HiltViewModel
 class MetaDataViewModel @Inject constructor(
-    val application: Application,
     private val metadataRepo: MetadataRepo
 ) : ViewModel() {
 

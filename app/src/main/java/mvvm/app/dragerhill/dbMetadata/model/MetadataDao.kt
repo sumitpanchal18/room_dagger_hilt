@@ -1,12 +1,12 @@
-package mvvm.app.dragerhill.dbMetadata
+package mvvm.app.dragerhill.dbMetadata.model
 
-import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Delete
 import androidx.room.Insert
 import androidx.room.Query
 import androidx.room.Update
 import kotlinx.coroutines.flow.Flow
+import mvvm.app.dragerhill.dbMetadata.model.MetaData
 
 @Dao
 interface MetadataDao {
