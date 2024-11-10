@@ -17,6 +17,18 @@
         android:theme="@style/Theme.DragerHill"
         tools:targetApi="31">
         <activity
+            android:name=".dbMetadata.view.RoomDbActivity"
+            android:exported="false" />
+        <activity
+            android:name=".recyclerView.view.RvMainActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
             android:name=".commentJsonHolderApi.view.CommentApiActivity"
             android:exported="false" />
         <activity
@@ -31,15 +43,6 @@
         <activity
             android:name=".ui.activity.main.PracticeActivity"
             android:exported="false" />
-        <activity
-            android:name=".dbMetadata.view.RoomDbActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
     </application>
 
 </manifest>

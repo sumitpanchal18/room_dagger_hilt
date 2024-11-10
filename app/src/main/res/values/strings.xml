@@ -11,5 +11,7 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="generated_slug_will_appear_here">Generated Slug will appear here</string>
-    <string name="loading">Loading...</string>
+    <string name="loading">Loading…</string>
+    <string name="post_title">Post Title</string>
+    <string name="post_body">Post Body</string>
 </resources>
