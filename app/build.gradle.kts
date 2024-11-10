@@ -93,4 +93,7 @@ dependencies {
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
 
     implementation("com.facebook.shimmer:shimmer:0.5.0")
+    implementation ("androidx.fragment:fragment-ktx:1.8.5")
+    // Removed the hilt-lifecycle-viewmodel dependency
+    // No need for "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0"
 }

@@ -15,6 +15,7 @@ import mvvm.app.dragerhill.dbMetadata.model.MetadataRepo
 import mvvm.app.dragerhill.dbPrivateKey.PrivateKeyAppDatabase
 import mvvm.app.dragerhill.dbPrivateKey.PrivateKeyDao
 import mvvm.app.dragerhill.dbPrivateKey.PrivateKeyRepo
+import mvvm.app.dragerhill.recyclerView.model.PostApi
 import mvvm.app.dragerhill.utils.Constant
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
@@ -42,9 +43,10 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideRetrofit(okHttp: OkHttpClient): Retrofit {
+    @CommentRetrofit
+    fun provideCommentRetrofit(okHttp: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(Constant.BaseUrl)
+            .baseUrl(Constant.CommentApiBaseUrl)
             .client(okHttp)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -52,8 +54,25 @@ class ApplicationModule {
 
     @Singleton
     @Provides
-    fun provideCommentApi(retrofit: Retrofit): CommentApi {
+    @PostRetrofit
+    fun providePostRetrofit(okHttp: OkHttpClient): Retrofit {
+        return Retrofit.Builder()
+            .baseUrl(Constant.PostApiBaseUrl)
+            .client(okHttp)
+            .addConverterFactory(GsonConverterFactory.create())
+            .build()
+    }
+
+    @Singleton
+    @Provides
+    fun provideCommentApi(@CommentRetrofit retrofit: Retrofit): CommentApi {
         return retrofit.create(CommentApi::class.java)
+    }
+
+    @Singleton
+    @Provides
+    fun providePostApi(@PostRetrofit retrofit: Retrofit): PostApi {
+        return retrofit.create(PostApi::class.java)
     }
 
     @Singleton
