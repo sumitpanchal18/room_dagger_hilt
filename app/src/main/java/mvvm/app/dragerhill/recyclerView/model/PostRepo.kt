@@ -4,7 +4,7 @@ import retrofit2.Response
 import javax.inject.Inject
 
 class PostRepo @Inject constructor(private val postApi: PostApi) {
-    suspend fun getPosts(): Response<List<Post>> {
-        return postApi.getPosts()
+    suspend fun getPosts(id : Int): Response<List<Post>> {
+        return postApi.getPosts(id)
     }
 }

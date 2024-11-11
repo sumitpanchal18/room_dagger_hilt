@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="20dp"
-    android:backgroundTint="#673AB7"
+    android:backgroundTint="#72599E"
     app:cardCornerRadius="20dp">
 
     <LinearLayout
@@ -28,6 +28,24 @@
             android:text="@string/post_body"
             android:textColor="@color/white"
             android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvPostId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/post_Id"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tvPostUserId"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/post_Userid"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+
     </LinearLayout>
 
 </androidx.cardview.widget.CardView>
