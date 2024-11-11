@@ -46,7 +46,7 @@ class ApplicationModule {
     @CommentRetrofit
     fun provideCommentRetrofit(okHttp: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(Constant.CommentApiBaseUrl)
+            .baseUrl(Constant.COMMENT_API_BASE_URL)
             .client(okHttp)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -57,7 +57,7 @@ class ApplicationModule {
     @PostRetrofit
     fun providePostRetrofit(okHttp: OkHttpClient): Retrofit {
         return Retrofit.Builder()
-            .baseUrl(Constant.PostApiBaseUrl)
+            .baseUrl(Constant.POST_API_BASE_URL)
             .client(okHttp)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

@@ -14,4 +14,6 @@
     <string name="loading">Loading…</string>
     <string name="post_title">Post Title</string>
     <string name="post_body">Post Body</string>
+    <string name="post_Id">Post Id</string>
+    <string name="post_Userid">Post UserId</string>
 </resources>
