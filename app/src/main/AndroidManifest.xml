@@ -17,10 +17,13 @@
         android:theme="@style/Theme.DragerHill"
         tools:targetApi="31">
         <activity
+            android:name=".recyclerView.view.RvMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".dbMetadata.view.RoomDbActivity"
             android:exported="false" />
         <activity
-            android:name=".recyclerView.view.RvMainActivity"
+            android:name=".ui.activity.contentProvider.ContentProviderActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -43,6 +46,11 @@
         <activity
             android:name=".ui.activity.main.PracticeActivity"
             android:exported="false" />
+
+        <provider
+            android:name=".ui.activity.contentProvider.UserContentProvider"
+            android:authorities="mvvm.app.dragerhill"
+            android:exported="true" />
     </application>
 
 </manifest>
