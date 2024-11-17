@@ -9,6 +9,7 @@ import kotlinx.coroutines.launch
 import mvvm.app.dragerhill.commentJsonHolderApi.view.Result
 import mvvm.app.dragerhill.recyclerView.model.Post
 import mvvm.app.dragerhill.recyclerView.model.PostRepo
+import mvvm.app.dragerhill.utils.Constant
 import javax.inject.Inject
 
 @HiltViewModel
@@ -24,7 +25,7 @@ class PostViewModel @Inject constructor(
 
         viewModelScope.launch {
             try {
-                val response = postRepo.getPosts()
+                val response = postRepo.getPosts(Constant.ID)
 
                 if (response.isSuccessful) {
                     _uiState.value =
