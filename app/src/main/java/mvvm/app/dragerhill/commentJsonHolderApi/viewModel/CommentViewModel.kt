@@ -16,14 +16,10 @@ class CommentViewModel @Inject constructor(
         emit(Result.Loading)
 
         try {
-            val response = commentApi.getComments(id)
-            if (response.isSuccessful) {
-                emit(Result.Success(response.body()))
-            } else {
-                emit(Result.Error("API call failed with status: ${response.code()}"))
-            }
+            val comments = commentApi.getComments(id)
+            emit(Result.Success(comments))
         } catch (e: Exception) {
-            emit(Result.Error("API call failed: ${e.message}"))
+            emit(Result.Error("Failed to fetch comments: ${e.message}"))
         }
     }
 }

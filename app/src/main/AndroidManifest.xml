@@ -20,7 +20,7 @@
             android:name=".dbMetadata.view.RoomDbActivity"
             android:exported="false" />
         <activity
-            android:name=".recyclerView.view.RvMainActivity"
+            android:name=".commentJsonHolderApi.view.CommentApiActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -29,7 +29,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".commentJsonHolderApi.view.CommentApiActivity"
+            android:name=".recyclerView.view.RvMainActivity"
             android:exported="false" />
         <activity
             android:name=".dbPrivateKey.PrivateKeyActivity"
