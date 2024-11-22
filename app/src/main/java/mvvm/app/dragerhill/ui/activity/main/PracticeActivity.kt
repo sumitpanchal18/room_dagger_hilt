@@ -5,6 +5,8 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import mvvm.app.dragerhill.databinding.ActivityPracticeBinding
 
+data class Pair<T, U>(val first: T, val second: U)
+
 class PracticeActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityPracticeBinding
@@ -12,8 +14,18 @@ class PracticeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityPracticeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.shimmerLayout.startShimmer()
-        simulateDataLoading()
+//        binding.shimmerLayout.startShimmer()
+//        simulateDataLoading()
+
+
+//        Pair kotlin android.
+        val pair1 = Pair(10, 20)
+        val pair2 = Pair(10, 20)
+
+        println(pair1.first)
+        println(pair2.second)
+
+
     }
 
     @SuppressLint("SetTextI18n")
