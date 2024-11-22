@@ -16,4 +16,6 @@
     <string name="post_body">Post Body</string>
     <string name="post_Id">Post Id</string>
     <string name="post_Userid">Post UserId</string>
+    <string name="time">Time</string>
+    <string name="checking_connectivity">Checking connectivity...</string>
 </resources>
