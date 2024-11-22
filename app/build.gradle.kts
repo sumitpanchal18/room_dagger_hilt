@@ -93,7 +93,14 @@ dependencies {
     kaptAndroidTest("com.google.dagger:hilt-android-compiler:2.50")
 
     implementation("com.facebook.shimmer:shimmer:0.5.0")
-    implementation ("androidx.fragment:fragment-ktx:1.8.5")
-    // Removed the hilt-lifecycle-viewmodel dependency
-    // No need for "androidx.hilt:hilt-lifecycle-viewmodel:1.0.0"
+    implementation("androidx.fragment:fragment-ktx:1.8.5")
+
+    // RxJava
+    implementation("io.reactivex.rxjava2:rxjava:2.2.21")
+
+    // RxAndroid dependency (for Android-specific components like AndroidSchedulers)
+    implementation("io.reactivex.rxjava2:rxandroid:2.1.1")
+
+    // Retrofit RxJava adapter
+    implementation("com.squareup.retrofit2:adapter-rxjava2:2.9.0")
 }
