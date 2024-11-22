@@ -1,79 +1,57 @@
 package mvvm.app.dragerhill.ui.activity.contentProvider
 
 import android.content.ContentValues
-import android.database.Cursor
+import android.net.Uri
 import android.os.Bundle
+import android.util.Log
+import android.widget.Button
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import mvvm.app.dragerhill.R
 
 class ContentProviderActivity : AppCompatActivity() {
+    private val TAG = "ContentProviderActivity"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_content_provider)
+/*
+        val insertButton: Button = findViewById(R.id.insertButton)
+        insertButton.setOnClickListener {
+            try {
+                // Validate content values before insertion
+                val values = ContentValues().apply {
+                    put(DatabaseHelper.COLUMN_NAME, "Sample Kotlin Data")
+                    put(DatabaseHelper.COLUMN_VALUE, "Hello from Kotlin Sender App")
+                }
 
-        // Example of inserting a user
-        insertUser("John Doe", "john.doe@example.com")
+                // Double-check CONTENT_URI
+                val contentUri = Uri.parse(DataProvider.CONTENT_URI.toString())
+                Log.d(TAG, "Attempting to insert into URI: $contentUri")
 
-        // Example of querying all users
-        queryUsers()
+                // Insert data into Content Provider
+                val newUri = contentResolver.insert(
+                    contentUri,
+                    values
+                )
 
-        // Example of updating a user's email
-        updateUserEmail("John Doe", "new.email@example.com")
-
-        // Example of deleting a user
-        deleteUser("John Doe")
-    }
-
-
-
-    private fun insertUser(name: String, email: String) {
-        val values = ContentValues().apply {
-            put("name", name)
-            put("email", email)
-        }
-        val uri = contentResolver.insert(UserContentProvider.CONTENT_URI, values)
-        println("Inserted data URI: $uri")
-    }
-
-    private fun queryUsers() {
-        val cursor: Cursor? = contentResolver.query(
-            UserContentProvider.CONTENT_URI,
-            null, // Select all columns
-            null, // No selection criteria
-            null, // No selection arguments
-            null  // Default sort order
-        )
-
-        cursor?.let {
-            while (it.moveToNext()) {
-                val name = it.getString(it.getColumnIndex("name"))
-                val email = it.getString(it.getColumnIndex("email"))
-                println("User: $name, Email: $email")
+                // Check if insertion was successful
+                if (newUri != null) {
+                    Log.d(TAG, "Data inserted successfully. New URI: $newUri")
+                    Toast.makeText(this, "Data inserted successfully", Toast.LENGTH_SHORT).show()
+                } else {
+                    Log.e(TAG, "Failed to insert data")
+                    Toast.makeText(this, "Failed to insert data", Toast.LENGTH_SHORT).show()
+                }
+            } catch (e: IllegalArgumentException) {
+                // Specific handling for URI-related errors
+                Log.e(TAG, "URI Error: ${e.message}", e)
+                Toast.makeText(this, "Invalid Content Provider URI", Toast.LENGTH_LONG).show()
+            } catch (e: Exception) {
+                // Catch-all for any other unexpected errors
+                Log.e(TAG, "Insertion failed: ${e.message}", e)
+                Toast.makeText(this, "Error inserting data: ${e.message}", Toast.LENGTH_LONG).show()
             }
-            it.close()
-        }
-    }
-
-    private fun updateUserEmail(name: String, newEmail: String) {
-        val values = ContentValues().apply {
-            put("email", newEmail)
-        }
-        val rowsUpdated = contentResolver.update(
-            UserContentProvider.CONTENT_URI,
-            values,
-            "name = ?",
-            arrayOf(name)
-        )
-        println("Rows updated: $rowsUpdated")
-    }
-
-    private fun deleteUser(name: String) {
-        val rowsDeleted = contentResolver.delete(
-            UserContentProvider.CONTENT_URI,
-            "name = ?",
-            arrayOf(name)
-        )
-        println("Rows deleted: $rowsDeleted")
+        }*/
     }
 }
