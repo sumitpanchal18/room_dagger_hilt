@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface PostApi {
     @GET(Constant.POST_API_ENDPOINT)
-    suspend fun getPosts(@Query("id") id: Int): Response<List<Post>>
+    suspend fun getPosts(/*@Query("id") id: Int*/): Response<List<Post>>
 }

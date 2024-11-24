@@ -2,18 +2,17 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.BATTERY_STATS"
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission
+        android:name="android.permission.BATTERY_STATS"
         tools:ignore="ProtectedPermissions" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <uses-permission android:name="android.permission.BLUETOOTH"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
 
     <application
         android:name=".BaseApp"
@@ -27,7 +26,19 @@
         android:theme="@style/Theme.DragerHill"
         tools:targetApi="31">
         <activity
+            android:name=".recyclerView.view.RvMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.activity.broadcastReceiver.BrActivity"
+            android:exported="true" />
+        <activity
+            android:name=".dbMetadata.view.RoomDbActivity"
+            android:exported="false" />
+        <activity
+            android:name=".commentJsonHolderApi.view.CommentApiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".postRequest.PostRequestActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -35,17 +46,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".dbMetadata.view.RoomDbActivity"
-            android:exported="false" />
-        <activity
-            android:name=".commentJsonHolderApi.view.CommentApiActivity"
-            android:exported="false">
-
-        </activity>
-        <activity
-            android:name=".recyclerView.view.RvMainActivity"
-            android:exported="false" />
         <activity
             android:name=".dbPrivateKey.PrivateKeyActivity"
             android:exported="false" />
@@ -62,7 +62,8 @@
             android:name=".ui.activity.broadcastReceiver.NetworkChangeReceiver"
             android:exported="true">
             <intent-filter>
-                <action android:name="android.net.conn.CONNECTIVITY_CHANGE"
+                <action
+                    android:name="android.net.conn.CONNECTIVITY_CHANGE"
                     tools:ignore="BatteryLife" />
             </intent-filter>
         </receiver>
